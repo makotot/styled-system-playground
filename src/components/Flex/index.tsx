@@ -1,13 +1,15 @@
 import styled from '@emotion/styled'
 import css from '@styled-system/css'
-import { flexbox, layout, LayoutProps, FlexboxProps } from 'styled-system'
+import { flexbox, layout, LayoutProps, FlexboxProps, margin } from 'styled-system'
+import { Margins } from '~/components/types'
 
 export const Child = styled('div')<{
   flex?: FlexboxProps['flex']
   alignSelf?: FlexboxProps['alignSelf']
   justifySelf?: FlexboxProps['justifySelf']
-  order?: FlexboxProps['order'];
-}>(
+  order?: FlexboxProps['order']
+} & Margins>(
+  margin,
   ({
     flex,
     alignSelf,
@@ -20,6 +22,7 @@ export const Child = styled('div')<{
     order,
   }),
 )
+
 export const Container = styled('div')<{
   width?: LayoutProps['width']
   height?: LayoutProps['height']

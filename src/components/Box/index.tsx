@@ -6,7 +6,6 @@ import {
   layout,
   border,
   shadow,
-  SpaceProps,
   BackgroundColorProps,
   BoxShadowProps,
   BorderProps,
@@ -19,13 +18,9 @@ import {
   BorderRadiusProps
 } from 'styled-system'
 import * as CSS from 'csstype'
+import { Spaces } from '~/components/types'
 
 export const Box = styled('div')<{
-  p?: SpaceProps['padding']
-  pt?: SpaceProps['paddingTop']
-  pb?: SpaceProps['paddingBottom']
-  pl?: SpaceProps['paddingLeft']
-  pr?: SpaceProps['paddingRight']
   bg?: BackgroundColorProps['backgroundColor']
   color?: CSS.ColorProperty
   border?: BorderProps['border']
@@ -37,7 +32,7 @@ export const Box = styled('div')<{
   maxHeight?: MaxHeightProps['maxHeight']
   shadow?: BoxShadowProps['boxShadow']
   radius?: BorderRadiusProps['borderRadius']
-}>(
+} & Spaces>(
   space,
   background,
   border,
