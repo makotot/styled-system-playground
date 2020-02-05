@@ -7,7 +7,7 @@ import {
 
 type ChildProps = Pick<
   FlexboxProps,
-  'flex' | 'alignSelf' | 'justifySelf' | 'order'
+  'flex' | 'alignSelf' | 'justifySelf' | 'order' | 'flexGrow' | 'flexShrink' | 'flexBasis'
 > & MarginProps
 
 export const Child = styled('div', {
@@ -18,18 +18,24 @@ export const Child = styled('div', {
     flex,
     alignSelf,
     justifySelf,
+    flexGrow,
+    flexShrink,
+    flexBasis,
     order,
   }) => css({
     flex,
     alignSelf,
     justifySelf,
+    flexGrow,
+    flexShrink,
+    flexBasis,
     order,
   }),
 )
 
 type ContainerProps = Pick<
   FlexboxProps,
-  'flexDirection' | 'alignContent' | 'alignItems' | 'justifyContent' | 'flexWrap' | 'flexBasis'
+  'flexDirection' | 'alignContent' | 'alignItems' | 'justifyContent' | 'flexWrap'
 > & Pick<
   LayoutProps,
   'height' | 'maxHeight' | 'minHeight' | 'width' | 'maxWidth' | 'minWidth'
