@@ -1,14 +1,18 @@
 import styled from '@emotion/styled'
 import css from '@styled-system/css'
-import { flexbox, layout, LayoutProps, FlexboxProps, margin } from 'styled-system'
-import { Margins } from '~/components/types'
+import shouldForwardProp from '@styled-system/should-forward-prop'
+import {
+  flexbox, layout, LayoutProps, FlexboxProps, margin, MarginProps,
+} from 'styled-system'
 
-export const Child = styled('div')<{
-  flex?: FlexboxProps['flex']
-  alignSelf?: FlexboxProps['alignSelf']
-  justifySelf?: FlexboxProps['justifySelf']
-  order?: FlexboxProps['order']
-} & Margins>(
+type ChildProps = Pick<
+  FlexboxProps,
+  'flex' | 'alignSelf' | 'justifySelf' | 'order'
+> & MarginProps
+
+export const Child = styled('div', {
+  shouldForwardProp,
+})<ChildProps>(
   margin,
   ({
     flex,
@@ -23,19 +27,20 @@ export const Child = styled('div')<{
   }),
 )
 
-export const Container = styled('div')<{
-  width?: LayoutProps['width']
-  height?: LayoutProps['height']
-  alignItems?: FlexboxProps['alignItems']
-  alignContent?: FlexboxProps['alignContent']
-  justifyContent?: FlexboxProps['justifyContent']
-  flexDirection?: FlexboxProps['flexDirection']
-  flexWrap?: FlexboxProps['flexWrap']
-  flexBasis?: FlexboxProps['flexBasis']
-}>(
+type ContainerProps = Pick<
+  FlexboxProps,
+  'flexDirection' | 'alignContent' | 'alignItems' | 'justifyContent' | 'flexWrap' | 'flexBasis'
+> & Pick<
+  LayoutProps,
+  'height' | 'maxHeight' | 'minHeight' | 'width' | 'maxWidth' | 'minWidth'
+>
+
+export const Container = styled('div', {
+  shouldForwardProp,
+})<ContainerProps>(
   flexbox,
   layout,
-  ({}) => css({
+  () => css({
     display: 'flex',
   }),
 )

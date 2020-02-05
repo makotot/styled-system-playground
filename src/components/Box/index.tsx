@@ -9,30 +9,22 @@ import {
   BackgroundColorProps,
   BoxShadowProps,
   BorderProps,
-  WidthProps,
-  HeightProps,
-  MinWidthProps,
-  MinHeightProps,
-  MaxWidthProps,
-  MaxHeightProps,
-  BorderRadiusProps
+  BorderRadiusProps,
+  SpaceProps,
+  LayoutProps,
 } from 'styled-system'
-import * as CSS from 'csstype'
-import { Spaces } from '~/components/types'
+import { ColorProps } from '../types'
 
-export const Box = styled('div')<{
-  bg?: BackgroundColorProps['backgroundColor']
-  color?: CSS.ColorProperty
-  border?: BorderProps['border']
-  width?: WidthProps['width']
-  minWidth?: MinWidthProps['minWidth']
-  maxWidth?: MaxWidthProps['maxWidth']
-  height?: HeightProps['height']
-  minHeight?: MinHeightProps['minHeight']
-  maxHeight?: MaxHeightProps['maxHeight']
-  shadow?: BoxShadowProps['boxShadow']
-  radius?: BorderRadiusProps['borderRadius']
-} & Spaces>(
+type Props =
+  & LayoutProps
+  & SpaceProps
+  & BackgroundColorProps
+  & BorderProps
+  & ColorProps
+  & BorderRadiusProps
+  & BoxShadowProps
+
+export const Box = styled('div')<Props>(
   space,
   background,
   border,

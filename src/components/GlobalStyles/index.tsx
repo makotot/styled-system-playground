@@ -1,8 +1,10 @@
 import { Global, css } from '@emotion/core'
+import { normalize } from 'polished'
 
 export const GlobalStyles = () => (
   <Global
     styles={css`
+      ${ normalize() }
       *, *::before, *::after {
         box-sizing: border-box;
       }
