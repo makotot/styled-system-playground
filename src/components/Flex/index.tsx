@@ -2,7 +2,7 @@ import styled from '@emotion/styled'
 import css from '@styled-system/css'
 import shouldForwardProp from '@styled-system/should-forward-prop'
 import {
-  flexbox, layout, LayoutProps, FlexboxProps, margin, MarginProps,
+  LayoutProps, FlexboxProps, margin, MarginProps, flexDirection, alignContent, alignItems, justifyContent, flexWrap, width, minWidth, maxWidth, height, minHeight, maxHeight,
 } from 'styled-system'
 
 type ChildProps = Pick<
@@ -44,9 +44,18 @@ type ContainerProps = Pick<
 export const Container = styled('div', {
   shouldForwardProp,
 })<ContainerProps>(
-  flexbox,
-  layout,
-  () => css({
+  flexDirection,
+  alignContent,
+  alignItems,
+  justifyContent,
+  flexWrap,
+  width,
+  minWidth,
+  maxWidth,
+  height,
+  minHeight,
+  maxHeight,
+  css({
     display: 'flex',
   }),
 )

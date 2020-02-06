@@ -1,4 +1,5 @@
 import styled from '@emotion/styled'
+import shouldForwardProp from '@styled-system/should-forward-prop'
 import {
   space,
   background,
@@ -24,7 +25,9 @@ type Props =
   & BorderRadiusProps
   & BoxShadowProps
 
-export const Box = styled('div')<Props>(
+export const Box = styled('div', {
+  shouldForwardProp,
+})<Props>(
   space,
   background,
   border,

@@ -1,10 +1,13 @@
 import { Box } from '~/components/Box'
-import * as Flex from '~/components/Flex'
+import * as Grid from '~/components/Grid'
 
 const IndexPage: React.FC = () => (
   <Box p="0.5rem" bg="#ddd">
-    <Flex.Container justifyContent="space-between">
-      <Flex.Child>
+    <Grid.Container
+      gridTemplateColumns="repeat(3, 1fr)"
+      gridColumnGap="1rem"
+    >
+      <Grid.Child>
         <Box
           p="1rem"
           bg="#3c54ff"
@@ -12,8 +15,8 @@ const IndexPage: React.FC = () => (
         >
           box
         </Box>
-      </Flex.Child>
-      <Flex.Child>
+      </Grid.Child>
+      <Grid.Child>
         <Box
           p="1rem"
           bg="#3c54ff"
@@ -21,8 +24,8 @@ const IndexPage: React.FC = () => (
         >
           box
         </Box>
-      </Flex.Child>
-      <Flex.Child>
+      </Grid.Child>
+      <Grid.Child>
         <Box
           p="1rem"
           bg="#3c54ff"
@@ -30,17 +33,8 @@ const IndexPage: React.FC = () => (
         >
           box
         </Box>
-      </Flex.Child>
-      <Flex.Child>
-        <Box
-          p="1rem"
-          bg="#3c54ff"
-          color="white"
-        >
-          box
-        </Box>
-      </Flex.Child>
-    </Flex.Container>
+      </Grid.Child>
+    </Grid.Container>
   </Box>
 )
 
