@@ -1,5 +1,5 @@
-import * as Stack from '~/components/Stack'
-import { Box } from '~/components/Box'
+import * as Stack from '~/components/UI/Stack'
+import { Box } from '~/components/UI/Box'
 import { theme } from '~/components/theme'
 
 export const SideNav = () => {

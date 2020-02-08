@@ -1,17 +1,16 @@
-import * as LayoutWithSidebar from '~/components/LayoutWithSidebar'
-import { HeadNav } from '~/components/HeadNav'
-import { Foot } from '~/components/Foot'
+import * as LayoutWithSidebar from '~/components/UI/LayoutWithSidebar'
+import { HeadNav } from '~/components/UI/PageLayout/HeadNav'
+import { Foot } from '~/components/UI/PageLayout/Foot'
+import { SideNav } from './SideNav'
 
 export const PageLayout = ({
-  Sidebar,
   Main,
 }: {
-  Sidebar: React.ReactNode;
   Main: React.ReactNode;
 }) => (
   <LayoutWithSidebar.Container isOpen={ false }>
     <LayoutWithSidebar.Sidebar>
-      { Sidebar }
+      <SideNav />
     </LayoutWithSidebar.Sidebar>
     <LayoutWithSidebar.Main>
       <HeadNav />

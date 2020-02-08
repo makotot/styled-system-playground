@@ -8,7 +8,7 @@
     ],
     "baseUrl": "./src",
     "paths": {
-      "~*": [".*"],
+      "~/*": ["./*"],
     },
     "allowJs": true,
     "skipLibCheck": true,
@@ -27,7 +27,7 @@
   ],
   "include": [
     "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx"
+    "./src/**/*.ts",
+    "./src/**/*.tsx"
   ]
 }

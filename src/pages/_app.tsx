@@ -1,8 +1,7 @@
 import { ThemeProvider } from "emotion-theming"
 import { theme } from '~/components/theme'
-import { GlobalStyles } from '~/components/GlobalStyles'
-import { PageLayout } from '~/components/PageLayout'
-import { SideNav } from '~/components/SideNav'
+import { GlobalStyles } from '~/components/UI/GlobalStyles'
+import { PageLayout } from '~/components/UI/PageLayout'
 
 const App = ({ Component, pageProps }: {
   Component: React.FC
@@ -11,9 +10,6 @@ const App = ({ Component, pageProps }: {
   <ThemeProvider theme={ theme }>
     <GlobalStyles />
     <PageLayout
-      Sidebar={
-        <SideNav />
-      }
       Main={
         <Component { ...pageProps } />
       }

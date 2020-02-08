@@ -14,7 +14,7 @@ import {
   SpaceProps,
   LayoutProps,
 } from 'styled-system'
-import { ColorProps } from '../types'
+import { ColorProps } from '../../types'
 
 type Props =
   & LayoutProps

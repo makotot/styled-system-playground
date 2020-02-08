@@ -1,5 +1,5 @@
-import * as Flex from '~/components/Flex'
-import { Box } from '~/components/Box'
+import * as Flex from '~/components/UI/Flex'
+import { Box } from '~/components/UI/Box'
 
 export const HeadNav = () => (
   <Box>

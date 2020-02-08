@@ -1,6 +1,6 @@
 import React from 'react'
-import * as Flex from '~/components/Flex'
-import { Box } from '~/components/Box'
+import * as Flex from '~/components/UI/Flex'
+import { Box } from '~/components/UI/Box'
 
 export const Foot = () => (
   <Box p="0.5rem">
