@@ -1,9 +1,10 @@
+import React from 'react'
 import { Global, css } from '@emotion/core'
 import { normalize } from 'polished'
 
-export const GlobalStyles = () => (
+export const GlobalStyles: React.FC = () => (
   <Global
-    styles={css`
+    styles={ css`
       ${ normalize() }
       *, *::before, *::after {
         box-sizing: border-box;
@@ -19,7 +20,6 @@ export const GlobalStyles = () => (
         padding: 0;
         list-style: none;
       }
-    `
-    }
+    ` }
   />
 )

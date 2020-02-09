@@ -5,19 +5,22 @@ import css from '@styled-system/css'
 export const Sidebar = styled('div')()
 export const Main = styled('div')()
 export const Container = styled('div')<{
-  width?: LayoutProps['width']
-  zIndex?: PositionProps['zIndex']
-  isOpen?: boolean
+  width?: LayoutProps['width'];
+  zIndex?: PositionProps['zIndex'];
+  isOpen?: boolean;
 }>(
   ({ width = '320px', zIndex = 1, isOpen }) => css({
     [`> ${ Sidebar }`]: css({
       position: 'fixed',
-      maxHeight: '100vh',
+      top: 0,
+      left: 0,
+      // maxHeight: '100vh',
       width,
-      overflowY: 'auto',
+      // overflowY: 'auto',
       transform: [
+        // eslint-disable-next-line prefer-template
         `translateX(${ isOpen ? 0 : '-' + width })`,
-        `translateX(0)`,
+        'translateX(0)',
       ],
       zIndex,
     }),
@@ -26,7 +29,7 @@ export const Container = styled('div')<{
         0,
         width,
       ],
-      minHeight: '100vh',
+      // minHeight: '100vh',
     }),
   }),
 )

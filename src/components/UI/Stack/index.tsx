@@ -4,7 +4,7 @@ import css from '@styled-system/css'
 
 export const Row = styled('li')()
 export const Container = styled('ul')<{
-  gutter: SpaceProps['marginTop']
+  gutter: SpaceProps['marginTop'];
 }>(
   ({ gutter = 0 }) => css({
     [`> ${ Row } + ${ Row }`]: {

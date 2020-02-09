@@ -13,8 +13,10 @@ import {
   BorderRadiusProps,
   SpaceProps,
   LayoutProps,
+  textAlign,
+  TextAlignProps,
 } from 'styled-system'
-import { ColorProps } from '../../types'
+import { ColorProps } from '../types'
 
 type Props =
   & LayoutProps
@@ -24,6 +26,7 @@ type Props =
   & ColorProps
   & BorderRadiusProps
   & BoxShadowProps
+  & TextAlignProps
 
 export const Box = styled('div', {
   shouldForwardProp,
@@ -34,4 +37,5 @@ export const Box = styled('div', {
   color,
   layout,
   shadow,
+  textAlign,
 )
