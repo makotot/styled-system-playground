@@ -9,7 +9,8 @@ export const Foot: React.FC = () => (
         @2020
       </Flex.Child>
       <Flex.Child>
-        Powered by
+        Powered by&nbsp;
+        <a href="#top">Link</a>
       </Flex.Child>
     </Flex.Container>
   </Box>

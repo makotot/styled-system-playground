@@ -1,6 +1,10 @@
+import { useTheme } from 'emotion-theming'
+import { ThemeType } from './types'
+
 const baseColors = {
   grey: '#3c4b64',
   white: '#fff',
+  black: '#000',
 }
 
 const colors = {
@@ -13,3 +17,5 @@ export const theme = {
   colors,
   spaces,
 }
+
+export const useAppTheme = (): ThemeType => useTheme<ThemeType>()

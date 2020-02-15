@@ -14,11 +14,26 @@ import {
   lineHeight,
   borderRadius,
 } from 'styled-system'
-import { BoxProps } from '../types'
+import { AnchorHTMLAttributes } from 'react'
+import css from '@styled-system/css'
+import { BoxProps, ThemeProps, CursorProps } from '../types'
 
-export const Box = styled('div', {
+export const BoxLink = styled('a', {
   shouldForwardProp,
-})<BoxProps>(
+})<
+  & AnchorHTMLAttributes<HTMLAnchorElement>
+  & ThemeProps
+  & BoxProps
+  & CursorProps
+>(
+  ({
+    display = 'block',
+    cursor = 'pointer',
+  }) => css({
+    display,
+    textDecoration: 'none',
+    cursor,
+  }),
   compose(
     space,
     background,
