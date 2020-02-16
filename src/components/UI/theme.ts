@@ -1,20 +1,35 @@
 import { useTheme } from 'emotion-theming'
+import { lighten } from 'polished'
 import { ThemeType } from './types'
 
-const baseColors = {
-  grey: '#3c4b64',
-  white: '#fff',
-  black: '#000',
+enum baseColors {
+  grey = '#3c4b64',
+  white = '#fff',
+  black = '#000',
+  blue = '#3c54ff',
+}
+
+enum spaces {
+  xs = '0.25rem',
+  s = '0.5rem',
+  m = '1rem',
+  l = '1.25rem',
+  xl = '2rem',
+}
+
+enum fontSizes {
+  m = '16px'
 }
 
 const colors = {
   ...baseColors,
-}
 
-const spaces = [0, 0.25, 0.5, 1, 1.25, 2].map((space) => `${ space }rem`)
+  greyDark: lighten(0.2, baseColors.black),
+}
 
 export const theme = {
   colors,
+  fontSizes,
   spaces,
 }
 

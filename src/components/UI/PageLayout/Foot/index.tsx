@@ -1,6 +1,5 @@
 import React from 'react'
-import * as Flex from '~/components/UI/Flex'
-import { Box } from '~/components/UI/Box'
+import { Flex, Box, TextLink } from '~/components/UI'
 
 export const Foot: React.FC = () => (
   <Box p="0.5rem">
@@ -10,7 +9,7 @@ export const Foot: React.FC = () => (
       </Flex.Child>
       <Flex.Child>
         Powered by&nbsp;
-        <a href="#top">Link</a>
+        <TextLink href="#top" textDecoration="none" hover={ { textDecoration: 'underline' } }>Link</TextLink>
       </Flex.Child>
     </Flex.Container>
   </Box>

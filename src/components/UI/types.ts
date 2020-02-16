@@ -13,8 +13,14 @@ import {
   LineHeightProps,
   OverflowProps,
   OpacityProps,
+  TypographyProps,
 } from 'styled-system'
+import { CSSObject } from '@styled-system/css'
 import { theme } from './theme'
+
+export type TextDecorationProps = {
+  textDecoration?: ResponsiveValue<CSS.TextDecorationProperty<string>>;
+}
 
 export type TextColorProps = {
   textColor?: ResponsiveValue<CSS.ColorProperty>;
@@ -46,3 +52,27 @@ export type BoxProps =
   & {
     as?: string;
   }
+
+export type TextProps =
+  & TextColorProps
+  & OpacityProps
+  & TypographyProps
+  & {
+    as?: string;
+  }
+
+export type PseudoTypes = Partial<{
+  hover: CSSObject;
+  active: CSSObject;
+  focus: CSSObject;
+  visited: CSSObject;
+  before: CSSObject;
+  after: CSSObject;
+  checked: CSSObject;
+  disabled: CSSObject;
+  focusWithin: CSSObject;
+  empty: CSSObject;
+  enabled: CSSObject;
+  invalid: CSSObject;
+  valid: CSSObject;
+}>

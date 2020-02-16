@@ -16,7 +16,29 @@ import {
 } from 'styled-system'
 import { AnchorHTMLAttributes } from 'react'
 import css from '@styled-system/css'
-import { BoxProps, ThemeProps, CursorProps } from '../types'
+import {
+  BoxProps, ThemeProps, CursorProps, PseudoTypes,
+} from '../types'
+
+const pseudoStyle = ({
+  hover = {},
+  active = {},
+  focus = {},
+  visited = {},
+  before = {},
+  after = {},
+  disabled = {},
+  focusWithin = {},
+}: PseudoTypes) => css({
+  '&:hover': hover,
+  '&:active': active,
+  '&:focus': focus,
+  '&:visited': visited,
+  '&::before': before,
+  '&::after': after,
+  '&:disabled': disabled,
+  '&:focusWithin': focusWithin,
+})
 
 export const BoxLink = styled('a', {
   shouldForwardProp,
@@ -25,6 +47,7 @@ export const BoxLink = styled('a', {
   & ThemeProps
   & BoxProps
   & CursorProps
+  & PseudoTypes
 >(
   ({
     display = 'block',
@@ -34,6 +57,7 @@ export const BoxLink = styled('a', {
     textDecoration: 'none',
     cursor,
   }),
+  pseudoStyle,
   compose(
     space,
     background,

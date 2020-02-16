@@ -1,17 +1,22 @@
 import styled from '@emotion/styled'
 import shouldForwardProp from '@styled-system/should-forward-prop'
-import { AnchorHTMLAttributes } from 'react'
 import {
-  compose,
-  typography,
-  opacity,
+  space,
+  border,
+  boxShadow,
+  BorderProps,
+  BoxShadowProps,
+  SpaceProps,
   TypographyProps,
-  OpacityProps,
+  typography,
+  color,
+  background,
+  borderRadius,
+  BorderRadiusProps,
 } from 'styled-system'
 import css from '@styled-system/css'
-import {
-  ThemeProps, TextColorProps, CursorProps, PseudoTypes, TextDecorationProps,
-} from '../types'
+import { InputHTMLAttributes } from 'react'
+import { ColorProps, PseudoTypes } from '../types'
 
 const pseudoStyle = ({
   hover = {},
@@ -33,30 +38,24 @@ const pseudoStyle = ({
   '&:focusWithin': focusWithin,
 })
 
-export const TextLink = styled('a', {
+export const TextField = styled('input', {
   shouldForwardProp,
 })<
-  & AnchorHTMLAttributes<HTMLAnchorElement>
-  & TextColorProps
+  & InputHTMLAttributes<HTMLInputElement>
+  & SpaceProps
+  & BorderProps
+  & BoxShadowProps
   & TypographyProps
-  & OpacityProps
-  & CursorProps
-  & ThemeProps
+  & ColorProps
+  & BorderRadiusProps
   & PseudoTypes
-  & TextDecorationProps
 >(
-  ({
-    textDecoration,
-    textColor,
-    cursor = 'pointer',
-  }) => css({
-    textDecoration,
-    cursor,
-    color: textColor,
-  }),
+  color,
+  background,
+  space,
+  border,
+  boxShadow,
+  typography,
+  borderRadius,
   pseudoStyle,
-  compose(
-    typography,
-    opacity,
-  ),
 )

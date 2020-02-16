@@ -5,18 +5,8 @@ import {
   opacity,
   compose,
   typography,
-  TypographyProps,
-  OpacityProps,
 } from 'styled-system'
-import { TextColorProps } from '../types'
-
-type TextProps =
-  & TextColorProps
-  & OpacityProps
-  & TypographyProps
-  & {
-    as?: string;
-  }
+import { TextProps } from '../types'
 
 export const Text = styled('span', {
   shouldForwardProp,

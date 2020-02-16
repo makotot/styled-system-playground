@@ -14,9 +14,7 @@ export const Container = styled('div')<{
       position: 'fixed',
       top: 0,
       left: 0,
-      // maxHeight: '100vh',
       width,
-      // overflowY: 'auto',
       transform: [
         // eslint-disable-next-line prefer-template
         `translateX(${ isOpen ? 0 : '-' + width })`,
@@ -29,7 +27,6 @@ export const Container = styled('div')<{
         0,
         width,
       ],
-      // minHeight: '100vh',
     }),
   }),
 )

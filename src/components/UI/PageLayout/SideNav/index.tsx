@@ -9,10 +9,10 @@ const Navs: React.FC = () => {
   const theme = useAppTheme()
   const items = Array(20).fill(false).map((_, index) => (
     <Stack.Row key={ index }>
-      <Box p="1rem" color={ theme.colors.white }>
-        <MediaObject.Container gutter="1rem">
+      <Box p={ theme.spaces.m } color={ theme.colors.white }>
+        <MediaObject.Container gutter={ theme.spaces.m }>
           <MediaObject.Media>
-            <Box p="1rem" bg={ theme.colors.white } />
+            <Box p={ theme.spaces.s } bg={ theme.colors.white } />
           </MediaObject.Media>
           <MediaObject.Body>
             <Box>body</Box>
@@ -33,7 +33,7 @@ export const SideNav: React.FC = () => {
       <ScrollableBody.Container height="100vh">
         <ScrollableBody.ContainerInner>
           <ScrollableBody.Head>
-            <Box p="1rem" bg={ theme.colors.black } opacity="0.5">
+            <Box p={ theme.spaces.m } bg={ theme.colors.black } opacity="0.5">
               <MediaObject.Container gutter="1rem" alignItems="center">
                 <MediaObject.Media>
                   <Box p="1rem" bg={ theme.colors.grey } />
@@ -45,12 +45,12 @@ export const SideNav: React.FC = () => {
             </Box>
           </ScrollableBody.Head>
           <ScrollableBody.Body>
-            <Stack.Container gutter="0.5rem">
+            <Stack.Container gutter={ theme.spaces.s }>
               <Navs />
             </Stack.Container>
           </ScrollableBody.Body>
           <ScrollableBody.Foot>
-            <Box p="1rem" bg={ theme.colors.black } opacity="0.5">foot</Box>
+            <Box p={ theme.spaces.m } bg={ theme.colors.black } opacity="0.5">foot</Box>
           </ScrollableBody.Foot>
         </ScrollableBody.ContainerInner>
       </ScrollableBody.Container>
